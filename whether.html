@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-100 min-h-screen flex justify-center items-start py-10">
+  <div class="bg-white max-w-6xl w-full rounded-lg shadow-lg overflow-hidden">
+    <!-- Header -->
+    <div class="bg-blue-600 text-white text-center py-4">
+      <h1 class="text-2xl font-bold">Weather Dashboard</h1>
+    </div>
+
+    <!-- Search and Result -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-blue-50">
+      <!-- Left: Search -->
+      <div class="space-y-4">
+        <label class="block font-semibold">Enter a City Name</label>
+        <input id="cityInput" type="text" placeholder="E.g., New York, London" class="w-full p-2 border rounded" />
+        <button onclick="getWeather()" class="w-full bg-blue-600 text-white py-2 rounded">Search</button>
+        <div class="text-center font-semibold text-gray-500">or</div>
+        <button onclick="getCurrentLocationWeather()" class="w-full bg-gray-700 text-white py-2 rounded">Use Current Location</button>
+      </div>
+
+      <!-- Right: Current Weather -->
+      <div id="weatherResult" class="md:col-span-2 bg-blue-500 text-white p-6 rounded-lg space-y-2">
+        <h2 id="locationDate" class="text-xl font-bold">India (2025-07-21)</h2>
+        <p id="temperature">Temperature: 7.06°C</p>
+        <p id="wind">Wind: 2.8 m/s</p>
+        <p id="humidity">Humidity: 88%</p>
+        <div class="flex items-center gap-3">
+          <img src="https://maps.gstatic.com/weather/v1/showers.svg" id="weatherIcon" src="" alt="icon" class="w-12 h-12" />
+          <span id="condition">--</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Forecast -->
+    <div class="px-6 pb-6">
+      <h3 class="text-lg font-bold mb-3">5-Day Forecast</h3>
+      <div id="forecast" class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="bg-gray-700 text-white p-3 rounded text-center">
+          <p class="font-bold">(2024-04-24)</p>
+          <img src="https://openweathermap.org/img/wn/10d.png" class="mx-auto" />
+          <p>Temp: 5.67°C</p>
+          <p>Wind: 2.77 M/S</p>
+          <p>Humidity: 76%</p>
+        </div>
+        <div class="bg-gray-700 text-white p-3 rounded text-center">
+          <p class="font-bold">(2024-04-25)</p>
+          <img src="https://openweathermap.org/img/wn/10d.png" class="mx-auto" />
+          <p>Temp: 5.23°C</p>
+          <p>Wind: 1.46 M/S</p>
+          <p>Humidity: 71%</p>
+        </div>
+        <div class="bg-gray-700 text-white p-3 rounded text-center">
+          <p class="font-bold">(2024-04-26)</p>
+          <img src="https://openweathermap.org/img/wn/10d.png" class="mx-auto" />
+          <p>Temp: 7.66°C</p>
+          <p>Wind: 1.87 M/S</p>
+          <p>Humidity: 91%</p>
+        </div>
+        <div class="bg-gray-700 text-white p-3 rounded text-center">
+          <p class="font-bold">(2024-04-27)</p>
+          <img src="https://openweathermap.org/img/wn/10d.png" class="mx-auto" />
+          <p>Temp: 9.09°C</p>
+          <p>Wind: 3.77 M/S</p>
+          <p>Humidity: 95%</p>
+        </div>
+        <div class="bg-gray-700 text-white p-3 rounded text-center">
+          <p class="font-bold">(2024-04-28)</p>
+          <img src="https://openweathermap.org/img/wn/10d.png" class="mx-auto" />
+          <p>Temp: 8.46°C</p>
+          <p>Wind: 4.23 M/S</p>
+          <p>Humidity: 94%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="weather.js"></script>
+</body>
+</html>
